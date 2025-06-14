@@ -7,7 +7,9 @@ export function Header() {
     const sectionLinks = [
         { name: "About", id: "one" },
         { name: "Things I Can Do", id: "two" },
-        { name: "From JSON", id: "fromjson" },
+        { name: "React Apps", id: "react" },
+        { name: "Angular Apps", id: "angular" },
+        { name: "Typescript Apps", id: "typescript" },
         // { name: "A Few Apps", id: "three" },
         { name: "A Few DevOps Apps", id: "four" }
     ];

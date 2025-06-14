@@ -11,7 +11,7 @@ export function ProjectSummary(props: ProjectSummaryProps) {
 
     return (<article>
         <a
-            href={publishedUrl}
+            href={publishedUrl || "#"}
             className="image"
         ><img
                 src={imageUrl}

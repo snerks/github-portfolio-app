@@ -123,6 +123,39 @@ function App() {
     },
   ];
 
+  const dotnetProjectSummaries: ProjectSummaryNarrative[] = [
+    {
+      publishedUrl: '',
+      imageUrl: 'https://avatars1.githubusercontent.com/u/7326391?s=460&v=4',
+      title: 'Docker Compose .NET Core Web App',
+      description: 'Docker Compose sample with ASP.NET Core 3.1 Web API and SQL Server.',
+      technologies: ['.NET Core', 'ASP.NET Core', 'C#', 'REST API', 'SQL Server', 'Docker', 'Docker Compose'],
+    },
+    {
+      publishedUrl: '',
+      imageUrl: 'https://avatars1.githubusercontent.com/u/7326391?s=460&v=4',
+      title: '.NET Core Web App',
+      description: 'A .NET Core Web App with CI/CD from Azure Pipelines.',
+      technologies: ['.NET Core', 'ASP.NET Core', 'C#', 'XUnit', 'Azure Pipelines'],
+    },
+    {
+      publishedUrl: '',
+      imageUrl: 'https://avatars1.githubusercontent.com/u/7326391?s=460&v=4',
+      title: 'NodeJs Web App',
+      description: 'A NodeJs Web App with CI/CD from Azure Pipelines.',
+      technologies: ['NodeJs', 'Javascript', 'Azure Pipelines'],
+    },
+  ];
+
+  const reactProjectSummaries =
+    projectSummaries.filter(p => p.technologies.some(t => t.toLowerCase().includes('react')) &&
+      !p.technologies.some(t => t.toLowerCase().includes('angular')));
+
+  const angularProjectSummaries = projectSummaries.filter(p => p.technologies.some(t => t.toLowerCase().includes('angular')));
+
+  const typescriptProjectSummaries =
+    projectSummaries.filter(p => p.technologies.some(t => t.toLowerCase().includes('angular')) || p.technologies.some(t => t.toLowerCase().includes('typescript')));
+
   return (
     <>
       <Header />
@@ -166,14 +199,48 @@ function App() {
           </section>
 
           {/* From JSON */}
-          <section id="fromjson">
+          <section id="react">
             <div className="container">
-              <h3>A Few Recent Apps ({projectSummaries.length})</h3>
+              <h3>A Few React Apps ({reactProjectSummaries.length})</h3>
               <div className="features">
-                {projectSummaries.map((project, index) => (
+                {reactProjectSummaries.map((project, index) => (
                   <ProjectSummary
                     key={index}
-                    publishedUrl={project.publishedUrl}
+                    publishedUrl={project.publishedUrl || "#react"}
+                    imageUrl={project.imageUrl}
+                    technologies={project.technologies}
+                    title={project.title}
+                    description={project.description} />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section id="typescript">
+            <div className="container">
+              <h3>A Few TypeScript Apps ({typescriptProjectSummaries.length})</h3>
+              <div className="features">
+                {typescriptProjectSummaries.map((project, index) => (
+                  <ProjectSummary
+                    key={index}
+                    publishedUrl={project.publishedUrl || "#typescript"}
+                    imageUrl={project.imageUrl}
+                    technologies={project.technologies}
+                    title={project.title}
+                    description={project.description} />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section id="angular">
+            <div className="container">
+              <h3>A Few Angular Apps ({angularProjectSummaries.length})</h3>
+              <div className="features">
+                {angularProjectSummaries.map((project, index) => (
+                  <ProjectSummary
+                    key={index}
+                    publishedUrl={project.publishedUrl || "#angular"}
                     imageUrl={project.imageUrl}
                     technologies={project.technologies}
                     title={project.title}
@@ -470,72 +537,18 @@ function App() {
           {/* Four */}
           <section id="four">
             <div className="container">
-              <h3>A Few Devops Apps</h3>
+              <h3>A Few Devops Apps ({dotnetProjectSummaries.length})</h3>
 
               <div className="features">
-                <article>
-                  <a
-                    href="https://github.com/snerks/DockerComposeApiDb01/"
-                    className="image"
-                  ><img
-                      src="https://avatars1.githubusercontent.com/u/7326391?s=460&v=4"
-                      alt="" /></a>
-                  <div className="inner">
-                    <h4>Docker Compose .NET Core Web App</h4>
-                    <p>
-                      Docker Compose sample with ASP.NET Core 3.1 Web API and SQL
-                      Server.
-                    </p>
-                    <ul>
-                      <li>.NET Core</li>
-                      <li>ASP.NET Core</li>
-                      <li>C#</li>
-                      <li>REST API</li>
-                      <li>SQL Server</li>
-                      <li>Docker</li>
-                      <li>Docker Compose</li>
-                    </ul>
-                  </div>
-                </article>
-
-                <article>
-                  <a
-                    href="https://github.com/snerks/CoreWebAppXUnit1/"
-                    className="image"
-                  ><img
-                      src="https://avatars1.githubusercontent.com/u/7326391?s=460&v=4"
-                      alt=""
-                    /></a>
-                  <div className="inner">
-                    <h4>.NET Core Web App</h4>
-                    <p>A .NET Core Web App with CI/CD from Azure Pipelines.</p>
-                    <ul>
-                      <li>.NET Core</li>
-                      <li>ASP.NET Core</li>
-                      <li>C#</li>
-                      <li>XUnit</li>
-                      <li>Azure Pipelines</li>
-                    </ul>
-                  </div>
-                </article>
-                <article>
-                  <a
-                    href="https://github.com/snerks/pipelines-javascript/"
-                    className="image"
-                  ><img
-                      src="https://avatars1.githubusercontent.com/u/7326391?s=460&v=4"
-                      alt=""
-                    /></a>
-                  <div className="inner">
-                    <h4>NodeJs Web App</h4>
-                    <p>A NodeJs Web App with CI/CD from Azure Pipelines.</p>
-                    <ul>
-                      <li>NodeJs</li>
-                      <li>Javascript</li>
-                      <li>Azure Pipelines</li>
-                    </ul>
-                  </div>
-                </article>
+                {dotnetProjectSummaries.map((project, index) => (
+                  <ProjectSummary
+                    key={index}
+                    publishedUrl={project.publishedUrl || "#four"}
+                    imageUrl={project.imageUrl}
+                    technologies={project.technologies}
+                    title={project.title}
+                    description={project.description} />
+                ))}
               </div>
             </div>
           </section>
