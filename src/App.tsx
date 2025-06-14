@@ -1,8 +1,127 @@
 import './App.css'
 import { Header } from './Header'
+import { Footer } from './Footer'
 import HeaderImage from './assets/mike-carter-53.jpg'
+import { ProjectSummary } from './ProjectSummary'
+
+interface ProjectSummaryNarrative {
+  publishedUrl: string
+  title: string;
+  description: string;
+  imageUrl: string;
+  technologies: string[];
+}
 
 function App() {
+
+  const projectSummaries: ProjectSummaryNarrative[] = [
+    {
+      publishedUrl: 'https://snerks.github.io/mui-recommended-gigs-01/',
+      imageUrl: '/images/snerks.github.io_mui-recommended-gigs-01.png',
+      title: 'React Event Management System',
+      description: 'An entertainment event management system.',
+      technologies: ['React Hooks', 'React Router', 'Firebase', 'Formik 2', 'Yup', 'Material UI', 'TypeScript'],
+    },
+
+    {
+      publishedUrl: 'https://snerks.github.io/hr-workflow-app/',
+      imageUrl: '/images/hr-workflow-app.300.png',
+      title: 'React Workflow System',
+      description: 'A configurable workflow system.',
+      technologies: ['React', 'Vite', 'React Router', 'TypeScript', 'Material UI'],
+    },
+    {
+      publishedUrl: 'https://snerks.github.io/reversi-ts-app/',
+      imageUrl: '/images/reversi-app-2025.300.png',
+      title: 'React Reversi',
+      description: 'A board game, with computer player.',
+      technologies: ['React 19', 'TypeScript', 'Vite'],
+    },
+    {
+      publishedUrl: 'https://snerks.github.io/snooker-scorer-app/',
+      imageUrl: '/images/snooker-scorer-app.300.png',
+      title: 'React Snooker Scoring App',
+      description: 'Allows scoring for a snooker frame, in real time.',
+      technologies: ['React 19', 'TypeScript', 'Vite'],
+    },
+    {
+      publishedUrl: 'https://snerks.github.io/fsa-ratings-ng/',
+      imageUrl: '/images/fsa-ratings-ng.300.png',
+      title: 'Angular Food Business Rating System',
+      description: 'A client app allowing search for the FSA Ratings for food businesses in the UK.',
+      technologies: ['Angular 12', 'Angular Material', 'REST API', 'Material UI', 'TypeScript'],
+    },
+    {
+      publishedUrl: 'https://snerks.github.io/fix-protocol-app/',
+      imageUrl: '/images/fixprotocol.decoder.app.300.png',
+      title: 'React FIX Protocol Message Decoder',
+      description: 'A client app allowing FIX Messages to be decoded to a human-readable form.',
+      technologies: ['React 19', 'Vite', 'Material UI', 'TypeScript'],
+    },
+    {
+      publishedUrl: 'https://snerks.github.io/Copilot-Todo/',
+      imageUrl: '/images/todo-app.300.png',
+      title: 'React Todo App',
+      description: 'A client app allowing users to manage daily tasks.',
+      technologies: ['React 19', 'Vite', 'Material UI', 'TypeScript'],
+    },
+    {
+      publishedUrl: 'https://snerks.github.io/reactive-forms01/',
+      imageUrl: '/images/snerks.github.io_reactive-forms01_create.png',
+      title: 'Angular Event Management System',
+      description: 'An entertainment event management system.',
+      technologies: ['Angular', 'Reactive Forms', 'Firebase', 'Bootstrap', 'TypeScript'],
+    },
+    {
+      publishedUrl: 'https://snerks.github.io/store-admin-panel/dashboard/',
+      imageUrl: '/images/ng-dashboard.300.png',
+      title: 'Angular Dashboard System',
+      description: 'A sample dashboard system, with Material UI and ChartJS.',
+      technologies: ['Angular', 'Material UI', 'ChartJS', 'TypeScript'],
+    },
+    {
+      publishedUrl: 'https://snerks.github.io/footballstats-ts-app/',
+      imageUrl: '/images/football-stats-01.300.png',
+      title: 'React Chart App',
+      description: 'A responsive charting app, powered by ChartJs.',
+      technologies: ['React', 'ChartJs', 'TypeScript'],
+    },
+    {
+      publishedUrl: 'https://snerks.github.io/exchange-rate-app/',
+      imageUrl: '/images/react-ts-exchange-rates.300.png',
+      title: 'React Exchange Rate App',
+      description: 'An app to view Exchange Rates',
+      technologies: ['REST API', 'Material UI', 'TypeScript'],
+    },
+    {
+      publishedUrl: 'https://snerks.github.io/BlazorApp322/',
+      imageUrl: '/images/blazor-app-01.300.png',
+      title: 'Blazor WASM REST App',
+      description: 'A sample app, powered by Blazor WASM.',
+      technologies: ['Blazor WASM', 'REST API', 'Bootstrap', 'C#'],
+    },
+    {
+      publishedUrl: 'https://snerks.github.io/react-bootstrap-ts-website/',
+      imageUrl: '/images/react-bootstrap-site-01.300.png',
+      title: 'React Bootstrap Website',
+      description: 'A marketing web site, using React and Bootstrap.',
+      technologies: ['React', 'Bootstrap', 'TypeScript'],
+    },
+    {
+      publishedUrl: 'https://snerks.github.io/my-blog-starter/',
+      imageUrl: '/images/gatsby-starter-blog.300.png',
+      title: 'Gatsby Blog',
+      description: 'A blog site, powered by Gatsby.',
+      technologies: ['Gatsby', 'React', 'Graphql'],
+    },
+    {
+      publishedUrl: 'https://snerks.github.io/asteroids-react-ts-01/',
+      imageUrl: '/images/space-game.01.300.png',
+      title: 'Space Game',
+      description: 'A space game, implemented with React.',
+      technologies: ['React', 'TypeScript'],
+    },
+  ];
 
   return (
     <>
@@ -30,12 +149,6 @@ function App() {
             <div className="container">
               <h3>Things I Can Do</h3>
 
-              {/* <p>
-                Integer eu ante ornare amet commetus vestibulum blandit integer in
-                curae ac faucibus integer non. Adipiscing cubilia elementum
-                integer lorem ipsum dolor sit amet.
-              </p>  */}
-
               <ul className="feature-icons">
                 <li className="icon solid fa-code">.NET Core</li>
                 <li className="icon solid fa-code">C#</li>
@@ -52,8 +165,27 @@ function App() {
             </div>
           </section>
 
+          {/* From JSON */}
+          <section id="fromjson">
+            <div className="container">
+              <h3>A Few Recent Apps ({projectSummaries.length})</h3>
+              <div className="features">
+                {projectSummaries.map((project, index) => (
+                  <ProjectSummary
+                    key={index}
+                    publishedUrl={project.publishedUrl}
+                    imageUrl={project.imageUrl}
+                    technologies={project.technologies}
+                    title={project.title}
+                    description={project.description} />
+                ))}
+              </div>
+            </div>
+          </section>
+
+
           {/* Three */}
-          <section id="three">
+          {/* <section id="three">
             <div className="container">
               <h3>A Few Apps</h3>
               <div className="features">
@@ -80,6 +212,7 @@ function App() {
                     </ul>
                   </div>
                 </article>
+
                 <article>
                   <a
                     href="https://snerks.github.io/hr-workflow-app/"
@@ -98,6 +231,7 @@ function App() {
                     </ul>
                   </div>
                 </article>
+
                 <article>
                   <a href="https://snerks.github.io/reversi-ts-app/" className="image"
                   ><img src={"/images/reversi-app-2025.300.png"} alt=""
@@ -207,6 +341,7 @@ function App() {
                     </ul>
                   </div>
                 </article>
+
                 <article>
                   <a
                     href="https://snerks.github.io/store-admin-panel/dashboard/"
@@ -228,6 +363,7 @@ function App() {
                     </ul>
                   </div>
                 </article>
+
                 <article>
                   <a
                     href="https://snerks.github.io/footballstats-ts-app/"
@@ -244,6 +380,7 @@ function App() {
                     </ul>
                   </div>
                 </article>
+
                 <article>
                   <a
                     href="https://snerks.github.io/exchange-rate-app/"
@@ -260,6 +397,7 @@ function App() {
                     </ul>
                   </div>
                 </article>
+
                 <article>
                   <a href="https://snerks.github.io/BlazorApp322/" className="image"
                   ><img src="/images/blazor-app-01.300.png" alt=""
@@ -275,6 +413,7 @@ function App() {
                     </ul>
                   </div>
                 </article>
+
                 <article>
                   <a
                     href="https://snerks.github.io/react-bootstrap-ts-website/"
@@ -291,6 +430,7 @@ function App() {
                     </ul>
                   </div>
                 </article>
+
                 <article>
                   <a
                     href="https://snerks.github.io/my-blog-starter/"
@@ -307,6 +447,7 @@ function App() {
                     </ul>
                   </div>
                 </article>
+
                 <article>
                   <a
                     href="https://snerks.github.io/asteroids-react-ts-01/"
@@ -322,48 +463,14 @@ function App() {
                     </ul>
                   </div>
                 </article>
-
-
-                {/* <article>
-                  <a href="#" className="image"
-                  ><img src="images/pic02.jpg" alt=""
-                    /></a>
-                  <div className="inner">
-                    <h4>Terraformed a small moon</h4>
-                    <p>
-                      Integer eu ante ornare amet commetus vestibulum blandit
-                      integer in curae ac faucibus integer adipiscing ornare amet.
-                    </p>
-                  </div>
-                </article>
-                <article>
-                  <a href="#" className="image"
-                  ><img src="images/pic03.jpg" alt=""
-                    /></a>
-                  <div className="inner">
-                    <h4>Snapped dark matter in the wild</h4>
-                    <p>
-                      Integer eu ante ornare amet commetus vestibulum blandit
-                      integer in curae ac faucibus integer adipiscing ornare amet.
-                    </p>
-                  </div>
-                </article>  */}
-
               </div>
             </div>
-          </section>
+          </section> */}
 
           {/* Four */}
           <section id="four">
             <div className="container">
               <h3>A Few Devops Apps</h3>
-
-              {/* <p>
-                Integer eu ante ornare amet commetus vestibulum blandit integer in
-                curae ac faucibus integer non. Adipiscing cubilia elementum
-                integer. Integer eu ante ornare amet commetus.
-              </p>  */}
-
 
               <div className="features">
                 <article>
@@ -372,8 +479,7 @@ function App() {
                     className="image"
                   ><img
                       src="https://avatars1.githubusercontent.com/u/7326391?s=460&v=4"
-                      alt=""
-                    /></a>
+                      alt="" /></a>
                   <div className="inner">
                     <h4>Docker Compose .NET Core Web App</h4>
                     <p>
@@ -433,36 +539,11 @@ function App() {
               </div>
             </div>
           </section>
-
-
         </div>
       </div>
 
-      {/* Footer */}
-      <section id="footer">
-        <div className="container">
-          <ul className="copyright">
-            <li>&copy; snerks. All rights reserved.</li>
-            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-            <li>
-              Banner:
-              <a href="https://vole.wtf/buttystock/~mike-carter/53/"
-              >Mike Carter, via vole.wtf</a
-              >
-            </li>
-          </ul>
-        </div>
-      </section>
+      <Footer />
 
-      {/*       
-      <script src={"/js/jquery.min.js"}></script>
-      <script src={"/js/jquery.scrollex.min.js"}></script>
-      <script src={"/js/jquery.scrolly.min.js"}></script>
-      <script src={"/js/browser.min.js"}></script>
-      <script src={"/js/breakpoints.min.js"}></script>
-      <script src={"/js/util.js"}></script>
-      <script src={"/js/main.js"}></script>
-      */}
     </>
   )
 }
