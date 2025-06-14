@@ -1,4 +1,6 @@
-export const projectSummaries = [
+import type { ProjectSummaryNarrative } from "./ProjectSummaryNarrative";
+
+export const projectSummaries: ProjectSummaryNarrative[] = [
   {
     publishedUrl: "https://snerks.github.io/tab-player-app/",
     imageUrl: "/images/tab-player-app.png",

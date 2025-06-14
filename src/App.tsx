@@ -2,17 +2,10 @@ import './App.css'
 import { Header } from './Header'
 import { Footer } from './Footer'
 import HeaderImage from './assets/mike-carter-53.jpg'
-import { ProjectSummary } from './ProjectSummary'
+// import { ProjectSummary } from './ProjectSummary'
 import { dotnetProjectSummaries } from './DotnetProjectSummariesData'
 import { projectSummaries } from './ProjectSummariesData'
-
-export interface ProjectSummaryNarrative {
-  publishedUrl: string
-  title: string;
-  description: string;
-  imageUrl: string;
-  technologies: string[];
-}
+import { ProjectSection } from './ProjectSection'
 
 function App() {
 
@@ -68,24 +61,11 @@ function App() {
           </section>
 
           {/* From JSON */}
-          <section id="react">
-            <div className="container">
-              <h3>A Few React Apps ({reactProjectSummaries.length})</h3>
-              <div className="features">
-                {reactProjectSummaries.map((project, index) => (
-                  <ProjectSummary
-                    key={index}
-                    publishedUrl={project.publishedUrl || "#react"}
-                    imageUrl={project.imageUrl}
-                    technologies={project.technologies}
-                    title={project.title}
-                    description={project.description} />
-                ))}
-              </div>
-            </div>
-          </section>
+          <ProjectSection sectionId="react" sectionTitle="A Few React Apps" projectSummaries={reactProjectSummaries} />
 
-          <section id="typescript">
+          <ProjectSection sectionId="typescript" sectionTitle="A Few TypeScript Apps" projectSummaries={typescriptProjectSummaries} />
+
+          {/* <section id="typescript">
             <div className="container">
               <h3>A Few TypeScript Apps ({typescriptProjectSummaries.length})</h3>
               <div className="features">
@@ -100,9 +80,9 @@ function App() {
                 ))}
               </div>
             </div>
-          </section>
+          </section> */}
 
-          <section id="angular">
+          {/* <section id="angular">
             <div className="container">
               <h3>A Few Angular Apps ({angularProjectSummaries.length})</h3>
               <div className="features">
@@ -117,10 +97,12 @@ function App() {
                 ))}
               </div>
             </div>
-          </section>
+          </section> */}
+
+          <ProjectSection sectionId="angular" sectionTitle="A Few Angular Apps" projectSummaries={angularProjectSummaries} />
 
           {/* Four */}
-          <section id="four">
+          {/* <section id="four">
             <div className="container">
               <h3>A Few Devops Apps ({dotnetProjectSummaries.length})</h3>
 
@@ -136,7 +118,10 @@ function App() {
                 ))}
               </div>
             </div>
-          </section>
+          </section> */}
+
+          <ProjectSection sectionId="devops" sectionTitle="A Few DevOps Apps" projectSummaries={dotnetProjectSummaries} />
+
         </div>
       </div>
 
@@ -147,3 +132,5 @@ function App() {
 }
 
 export default App
+
+

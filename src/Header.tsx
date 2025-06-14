@@ -11,7 +11,7 @@ export function Header() {
         { name: "Angular Apps", id: "angular" },
         { name: "Typescript Apps", id: "typescript" },
         // { name: "A Few Apps", id: "three" },
-        { name: "A Few DevOps Apps", id: "four" }
+        { name: "A Few DevOps Apps", id: "devops" }
     ];
 
     const handleSectionClick = (event: any, sectionName: string) => {
