@@ -52,7 +52,7 @@ export function Header() {
                     alt="" />
             </span>
             <h1 id="logo"><a href="#">snerks</a></h1>
-            <p style={{ margin: "0 0 2.25em 0" }}>Full-stack software development</p>
+            <p style={{ margin: "0 0 0 0" }}>Full-stack software development</p>
         </header>
         <nav id="nav">
             <ul>

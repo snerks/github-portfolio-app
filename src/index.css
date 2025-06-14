@@ -2906,7 +2906,7 @@ input[type="button"]:disabled,
   border: 0;
   color: #ffffff !important;
   display: block;
-  padding: 0.85em 0;
+  padding: 0.5em 0;
   text-decoration: none;
 }
 

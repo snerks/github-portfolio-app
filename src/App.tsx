@@ -60,65 +60,11 @@ function App() {
             </div>
           </section>
 
-          {/* From JSON */}
           <ProjectSection sectionId="react" sectionTitle="A Few React Apps" projectSummaries={reactProjectSummaries} />
 
           <ProjectSection sectionId="typescript" sectionTitle="A Few TypeScript Apps" projectSummaries={typescriptProjectSummaries} />
 
-          {/* <section id="typescript">
-            <div className="container">
-              <h3>A Few TypeScript Apps ({typescriptProjectSummaries.length})</h3>
-              <div className="features">
-                {typescriptProjectSummaries.map((project, index) => (
-                  <ProjectSummary
-                    key={index}
-                    publishedUrl={project.publishedUrl || "#typescript"}
-                    imageUrl={project.imageUrl}
-                    technologies={project.technologies}
-                    title={project.title}
-                    description={project.description} />
-                ))}
-              </div>
-            </div>
-          </section> */}
-
-          {/* <section id="angular">
-            <div className="container">
-              <h3>A Few Angular Apps ({angularProjectSummaries.length})</h3>
-              <div className="features">
-                {angularProjectSummaries.map((project, index) => (
-                  <ProjectSummary
-                    key={index}
-                    publishedUrl={project.publishedUrl || "#angular"}
-                    imageUrl={project.imageUrl}
-                    technologies={project.technologies}
-                    title={project.title}
-                    description={project.description} />
-                ))}
-              </div>
-            </div>
-          </section> */}
-
           <ProjectSection sectionId="angular" sectionTitle="A Few Angular Apps" projectSummaries={angularProjectSummaries} />
-
-          {/* Four */}
-          {/* <section id="four">
-            <div className="container">
-              <h3>A Few Devops Apps ({dotnetProjectSummaries.length})</h3>
-
-              <div className="features">
-                {dotnetProjectSummaries.map((project, index) => (
-                  <ProjectSummary
-                    key={index}
-                    publishedUrl={project.publishedUrl || "#four"}
-                    imageUrl={project.imageUrl}
-                    technologies={project.technologies}
-                    title={project.title}
-                    description={project.description} />
-                ))}
-              </div>
-            </div>
-          </section> */}
 
           <ProjectSection sectionId="devops" sectionTitle="A Few DevOps Apps" projectSummaries={dotnetProjectSummaries} />
 
