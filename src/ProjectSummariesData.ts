@@ -46,7 +46,7 @@ export const projectSummaries: ProjectSummaryNarrative[] = [
   },
   {
     publishedUrl: "https://snerks.github.io/snooker-scorer-app/",
-    imageUrl: "/images/snooker-scorer-app.300.png",
+    imageUrl: "/images/snooker-scorer-app.cropped.png",
     title: "React Snooker Scoring App",
     description: "Allows scoring for a snooker frame, in real time.",
     technologies: ["React 19", "TypeScript", "Vite"],

@@ -9,14 +9,14 @@ interface ProjectSummaryProps {
 export function ProjectSummary(props: ProjectSummaryProps) {
     const { publishedUrl, title, description, imageUrl, technologies } = props;
 
-    console.log("ProjectSummary : START");
+    // console.log("ProjectSummary : START");
 
-    console.log(`import.meta.env.BASE_URL = [${import.meta.env.BASE_URL}]`);
+    // console.log(`import.meta.env.BASE_URL = [${import.meta.env.BASE_URL}]`);
     const baseUrlPrefix = import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
-    console.log(`baseUrlPrefix = [${baseUrlPrefix}]`);
+    // console.log(`baseUrlPrefix = [${baseUrlPrefix}]`);
 
     const imageUrlWithBase = imageUrl.startsWith("/") ? baseUrlPrefix + imageUrl : imageUrl;
-    console.log(`imageUrlWithBase = [${imageUrlWithBase}]`);
+    // console.log(`imageUrlWithBase = [${imageUrlWithBase}]`);
 
     return (<article>
         <a
